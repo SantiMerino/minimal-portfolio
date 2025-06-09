@@ -35,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className={`${inter.className} antialiased`}>
+    <html lang="en" style={{ scrollbarWidth: 'none' }} className={inter.variable}>
+      <body className={`${inter.className} antialiased h-full`}>
         {children}
       </body>
     </html>

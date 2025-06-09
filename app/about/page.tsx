@@ -1,28 +1,23 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { ExternalLink, MapPin, Calendar } from 'lucide-react';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Projects from '@/components/Projects';
 
-export default function Home() {
-    const [isVisible, setIsVisible] = useState(false);
 
-    useEffect(() => {
-        setIsVisible(true);
-    }, []);
+import { Toaster } from 'sonner';
 
+
+
+export default function About() {
 
 
     return (
-        <div className="min-h-screen bg-black flex items-center justify-center p-4 sm:p-6">
-            <Card className={`
-        w-full max-w-7xl bg-zinc-900 text-white p-8 sm:p-12 lg:p-16 border-none
-        transition-all duration-1000 ease-out transform
-        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-      `}>
-                Hellou
-            </Card>
-        </div>
+        <section className="bg-black flex flex-col items-center justify-center min-h-screen px-6" >
+            <Toaster theme='dark' />
+            <Navbar />
+            <Projects />
+            <Footer />
+        </ section>
     );
 }
