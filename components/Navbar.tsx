@@ -48,7 +48,7 @@ const FloatingNavbar = () => {
                         const IconComponent = item.icon;
                         const isActive = pathname === item.href;
                         return (
-                            <div className='relative group'>
+                            <div className='relative group' key={index}>
                                 <Link
                                     href={item.href}
                                     className="w-10 h-10 rounded-lg bg-[#000000]/40 hover:bg-[#6B7280]/20 border border-[#6B7280]/30 hover:border-[#FFFFFF]/30 flex items-center justify-center transition-all duration-300 hover:scale-105 group"
