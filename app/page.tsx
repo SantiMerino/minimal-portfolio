@@ -1,9 +1,9 @@
 "use client";
 
 import Navbar from '@/components/Navbar';
-import Home from '@/components/Home';
 import Footer from '@/components/Footer';
-import Projects from '@/components/Projects';
+import Home from '@/components/Home';
+
 
 
 import { Toaster } from 'sonner';

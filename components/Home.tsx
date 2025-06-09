@@ -2,14 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
-import { ExternalLink, MapPin, Calendar, ChevronsUpDown, ChevronDown } from 'lucide-react';
+import { Building, MapPin } from 'lucide-react';
 import { experiences, skills, stack } from '../app/data';
+import Link from 'next/link';
 
 
 
@@ -38,7 +40,7 @@ export default function Home() {
                         {/* Greeting */}
                         <div className="space-y-6">
                             <div className="flex items-center gap-2 text-gray-400">
-                                <span className="text-2xl animate-bounce">👋</span>
+                                <span className="text-2xl">👋</span>
                                 <span className="text-lg">Hello! | Hola!</span>
                             </div>
 
@@ -52,7 +54,7 @@ export default function Home() {
                         </div>
 
                         {/* Description */}
-                        <div className="space-y-6 max-w-lg">
+                        <div className="space-y-6 max-w-lg sm:max-w-full">
                             <p className="text-white text-lg leading-relaxed">
                                 💻Crafting fast, accessible web apps with TypeScript and React. Skilled in state management, streaming, and UI architecture—turning complex needs into sleek, intuitive interfaces.
                             </p>
@@ -62,7 +64,16 @@ export default function Home() {
                             </p>
                         </div>
 
-
+                        <div className='flex gap-2'>
+                            <Link href={"/contact"} >
+                                <Button variant="outline" className='bg-inherit hover:bg-zinc-800 hover:text-white text-white'>
+                                    Contact me
+                                </Button>
+                            </Link>
+                            <Button variant={'default'} className='bg-white hover:bg-zinc-300 text-zinc-900'>
+                                Check my work
+                            </Button>
+                        </div>
                     </div>
 
                     <Accordion
@@ -73,34 +84,37 @@ export default function Home() {
                     >
                         <h1 className='font-bold text-lg'>Experience</h1>
                         {experiences.map((expo, index) => (
-                            <div>
-                                <AccordionItem value={index.toString()}>
+
+                            <AccordionItem value={index.toString()} key={index}>
 
 
-                                    <AccordionTrigger className='text-left'>{expo.role + ' | ' + expo.period}</AccordionTrigger>
-                                    <AccordionContent className="flex flex-col gap-4 text-balance text-gray-400">
-                                        <p className='flex gap-2'>
-                                            {expo.company}
-                                        </p>
-                                        <p className='flex gap-2'>
-                                            <MapPin className='h-4 w-4' /> {expo.location}
-                                        </p>
-                                    </AccordionContent>
-                                </AccordionItem>
-                            </div>
+                                <AccordionTrigger className='text-left'>{expo.role + ' | ' + expo.period}</AccordionTrigger>
+                                <AccordionContent className="flex flex-col gap-4 text-balance text-gray-400">
+                                    <p className='flex gap-2'>
+                                        <Building className='h-4 w-4' /> {expo.company}
+                                    </p>
+                                    <p>
+                                        {expo.description}
+                                    </p>
+                                    <p className='flex gap-2'>
+                                        <MapPin className='h-4 w-4' /> {expo.location}
+                                    </p>
+                                </AccordionContent>
+                            </AccordionItem>
+
                         ))}
                     </Accordion>
-                    {/* Experience Sidebar */}
+                    {/* Stack Sidebar */}
                     <div className="lg:col-span-1">
                         <div className="space-y-8">
                             {/* stack */}
-                            <div className="pt-8 space-y-4">
-                                <h4 className="text-white font-medium text-base">📚 Stack</h4>
+                            <div className="space-y-4">
+                                <h4 className="text-white font-bold text-base">📚 Stack</h4>
                                 <div className="flex flex-wrap gap-2">
                                     {
                                         stack.map((stack, index) => (
                                             <span
-                                                key={stack.toString()}
+                                                key={index}
                                                 className={`
                         px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full
                         transition-all duration-500 ease-out transform 
@@ -115,12 +129,12 @@ export default function Home() {
                             </div>
                             {/* Skills */}
                             <div className="pt-8 space-y-4">
-                                <h4 className="text-white font-medium text-base">✅ Skills</h4>
+                                <h4 className="text-white font-bold text-base">✅ Skills</h4>
                                 <div className="flex flex-wrap gap-2">
                                     {
                                         skills.map((skill, index) => (
                                             <span
-                                                key={skill.toString()}
+                                                key={index}
                                                 className={`
                         px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full
                         transition-all duration-500 ease-out transform 

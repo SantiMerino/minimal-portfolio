@@ -19,14 +19,17 @@ export default function Navbar() {
     return (
         <div className={`'bg-black flex items-center justify-center p-4 sm:p-6' `} >
             {/* Contact Footer */}
-            <div className="pt-8 border-t border-gray-800">
+            <div className="pt-4 pb-4 border-t border-gray-800">
                 <p className="text-gray-500 text-sm">
                     Feel free to{' '}
                     <Button
                         variant="link"
                         className="text-white hover:text-gray-300 p-0 h-auto font-normal underline text-sm"
 
-                        onClick={() => { toast.info("Email me at: santimerinoh12@gmail.com") }}
+                        onClick={() => {
+                            navigator.clipboard.writeText("santimerinoh12@gmail.com");
+                            toast.success("Email copied succesfully")
+                        }}
 
                     >
                         drop me a mail

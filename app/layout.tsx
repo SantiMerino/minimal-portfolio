@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Poppins } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -8,8 +8,14 @@ const inter = Inter({
   variable: '--font-inter'
 });
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-poppins',
+});
+
 export const metadata: Metadata = {
-  title: 'Santaigo Merino',
+  title: 'Santiago Merino',
   description: 'Fullstack developer & Computer Science Student in El Salvador',
   keywords: ['Web Designer', 'Developer', 'UX', 'UI', 'El Salvador', 'San Salvador'],
   authors: [{ name: 'Santiago Merino' }],
@@ -22,8 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Max Josino - Product Designer & Developer',
-    description: 'Brazilian Product Designer & Developer based in Luxembourg',
+    title: 'Santiago Merino - Student & Fullstack Developer',
+    description: 'Fullstack developer & Computer Science Student in El Salvador',
   },
   viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
@@ -35,8 +41,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" style={{ scrollbarWidth: 'none' }} className={inter.variable}>
-      <body className={`${inter.className} antialiased h-full`}>
+    <html lang="en" style={{ scrollbarWidth: 'none' }} className={poppins.variable + 'scroll-smooth'}>
+      <body className={`${poppins.className} antialiased h-full`}>
         {children}
       </body>
     </html>
