@@ -15,8 +15,8 @@ const FloatingNavbar = () => {
     const navItems = [
         { icon: Home, label: 'Home', href: '/' },
         { icon: User, label: 'About', href: '/about' },
-        { icon: Code, label: 'Skills', href: '/skills' },
-        { icon: Briefcase, label: 'Experience', href: '/experience' },
+        // { icon: Code, label: 'Skills', href: '/skills' },
+        // { icon: Briefcase, label: 'Experience', href: '/experience' },
         { icon: FileText, label: 'Projects', href: '/projects' },
         { icon: Mail, label: 'Contact', href: '/contact' }
     ];

@@ -64,39 +64,44 @@ const config: Config = {
           '5': 'hsl(var(--chart-5))',
         },
       },
-      keyframes: {
-        shine: {
-          '0%': { 'background-position': '100%' },
-          '100%': { 'background-position': '-100%' },
-        },
-        'accordion-down': {
-          from: {
-            height: '0',
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-        },
-        'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-          to: {
-            height: '0',
-          },
-        },
-        'gradient': {
-          '0%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-          '100%': { backgroundPosition: '0% 50%' },
-        },
-      },
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-        'gradient': 'gradient 8s linear infinite',
-        'shine': 'shine 5s linear infinite',
-      },
+     keyframes: {
+  shine: {
+    '0%': { 'background-position': '100%' },
+    '100%': { 'background-position': '-100%' },
+  },
+  'accordion-down': {
+    from: {
+      height: '0',
+    },
+    to: {
+      height: 'var(--radix-accordion-content-height)',
+    },
+  },
+  'accordion-up': {
+    from: {
+      height: 'var(--radix-accordion-content-height)',
+    },
+    to: {
+      height: '0',
+    },
+  },
+  'gradient': {
+    '0%': { backgroundPosition: '0% 50%' },
+    '50%': { backgroundPosition: '100% 50%' },
+    '100%': { backgroundPosition: '0% 50%' },
+  },
+  'fade-in': {
+    'from': { opacity: '0', transform: 'translateY(20px)' },
+    'to': { opacity: '1', transform: 'translateY(0)' }
+  }
+},
+animation: {
+  'accordion-down': 'accordion-down 0.2s ease-out',
+  'accordion-up': 'accordion-up 0.2s ease-out',
+  'gradient': 'gradient 8s linear infinite',
+  'shine': 'shine 5s linear infinite',
+  'fade-in': 'fade-in 0.5s ease-out'
+}
     },
   },
   plugins: [require('tailwindcss-animate')],

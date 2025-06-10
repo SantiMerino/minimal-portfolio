@@ -1,3 +1,6 @@
+import { Code, Volleyball, Music, Coffee } from "lucide-react";
+
+
 const experiences = [
     {
         company: "Lid",
@@ -38,4 +41,125 @@ const skills = [
     'AI', 'SCRUM', 'CI/CD', 'Microsoft 365'
 ]
 
-export { experiences, stack, skills };
+const hobbies = [
+    { icon: <Code className="w-5 h-5" />, name: "Coding", description: "Building side projects and exploring new technologies" },
+    { icon: <Volleyball className="w-5 h-5" />, name: "Volleyball", description: "Capturing moments and experimenting with visual storytelling" },
+    { icon: <Music className="w-5 h-5" />, name: "Music", description: "Listen to R&B, Indie, Pop and Rap music" },
+    { icon: <Coffee className="w-5 h-5" />, name: "Coffee", description: "Exploring different brewing methods and local coffee shops" }
+];
+
+const education = [
+    {
+        degree: "Computer Science",
+        institution: "University Name",
+        year: "2020-2024",
+        description: "Focused on software engineering, algorithms, and web development"
+    },
+    {
+        degree: "Full Stack Development Bootcamp",
+        institution: "Coding Academy",
+        year: "2023",
+        description: "Intensive program covering modern web technologies"
+    }
+];
+
+const achievements = [
+    "Built 10+ web applications",
+    "Contributed to open source projects",
+    "Hackathon winner (2023)",
+    "Mentored 5+ junior developers"
+];
+
+
+// Sample projects data
+const projects = [
+    {
+        name: "E-Commerce Platform",
+        description: "Full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard. Features include user authentication, shopping cart, order tracking, and responsive design.",
+        stack: ["React", "TypeScript", "Node.js", "PostgreSQL", "Stripe"],
+        category: "Full Stack",
+        status: "Production",
+        year: "2024",
+        highlights: ["Real-time updates", "Payment integration", "Admin dashboard"],
+        githubUrl: "https://github.com/username/ecommerce",
+        liveUrl: "https://ecommerce-demo.com",
+        featured: true
+    },
+    {
+        name: "Task Management App",
+        description: "Collaborative task management application with drag-and-drop functionality, team collaboration features, and real-time synchronization across devices.",
+        stack: ["Next.js", "Tailwind CSS", "Supabase", "Framer Motion"],
+        category: "Web App",
+        status: "Active",
+        year: "2024",
+        highlights: ["Drag & drop", "Real-time sync", "Team collaboration"],
+        githubUrl: "https://github.com/username/taskapp",
+        liveUrl: "https://taskapp-demo.com",
+        featured: true
+    },
+    {
+        name: "Weather Analytics Dashboard",
+        description: "Interactive weather analytics platform with data visualization, historical trends, and predictive insights using machine learning algorithms.",
+        stack: ["React", "D3.js", "Python", "Flask", "Chart.js"],
+        category: "Data Visualization",
+        status: "Completed",
+        year: "2023",
+        highlights: ["ML predictions", "Interactive charts", "Historical data"],
+        githubUrl: "https://github.com/username/weather-dashboard",
+        liveUrl: "https://weather-analytics.com",
+        featured: false
+    },
+    {
+        name: "AI Chat Assistant",
+        description: "Intelligent chat assistant with natural language processing, context awareness, and integration with multiple APIs for enhanced functionality.",
+        stack: ["Vue.js", "Node.js", "OpenAI API", "Socket.io", "MongoDB"],
+        category: "AI/ML",
+        status: "Beta",
+        year: "2024",
+        highlights: ["NLP integration", "Context awareness", "Real-time chat"],
+        githubUrl: "https://github.com/username/ai-chat",
+        liveUrl: null,
+        featured: true
+    },
+    {
+        name: "Portfolio Website",
+        description: "Modern portfolio website with smooth animations, responsive design, and optimized performance. Built with cutting-edge web technologies.",
+        stack: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
+        category: "Web App",
+        status: "Production",
+        year: "2024",
+        highlights: ["Smooth animations", "SEO optimized", "Fast loading"],
+        githubUrl: "https://github.com/username/portfolio",
+        liveUrl: "https://portfolio-demo.com",
+        featured: false
+    },
+    {
+        name: "Data Pipeline Tool",
+        description: "Automated data pipeline for processing and analyzing large datasets with real-time monitoring and error handling capabilities.",
+        stack: ["Python", "Apache Airflow", "Docker", "PostgreSQL", "Redis"],
+        category: "Data Engineering",
+        status: "Active",
+        year: "2023",
+        highlights: ["Automated processing", "Real-time monitoring", "Error handling"],
+        githubUrl: "https://github.com/username/data-pipeline",
+        liveUrl: null,
+        featured: false
+    }
+];
+
+const categoryColors = {
+    "Full Stack": "bg-blue-500/20 text-blue-300 border-blue-500/30",
+    "Web App": "bg-green-500/20 text-green-300 border-green-500/30",
+    "Data Visualization": "bg-purple-500/20 text-purple-300 border-purple-500/30",
+    "AI/ML": "bg-orange-500/20 text-orange-300 border-orange-500/30",
+    "Data Engineering": "bg-red-500/20 text-red-300 border-red-500/30"
+};
+
+const statusColors = {
+    "Production": "bg-green-500/20 text-green-300",
+    "Active": "bg-blue-500/20 text-blue-300",
+    "Beta": "bg-yellow-500/20 text-yellow-300",
+    "Completed": "bg-gray-500/20 text-gray-300"
+};
+
+export { experiences, stack, skills, hobbies, education, achievements, categoryColors, statusColors, projects };
