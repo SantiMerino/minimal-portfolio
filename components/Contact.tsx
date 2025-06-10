@@ -74,7 +74,7 @@ export default function ScrollableContactCard() {
         }
     ];
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e: any) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -82,7 +82,7 @@ export default function ScrollableContactCard() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: any) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
         // Handle form submission here
