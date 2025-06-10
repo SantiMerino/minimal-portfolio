@@ -17,7 +17,7 @@ import {
     Star,
     Zap
 } from 'lucide-react';
-import { achievements, education, goals2025, hobbies } from '@/app/data';
+import { certifications, education, goals2025, hobbies } from '@/app/data';
 import Image from 'next/image';
 
 
@@ -49,8 +49,8 @@ const EnhancedAboutPage = () => {
             color: 'text-pink-400'
         },
         {
-            id: 'achievements',
-            label: 'Achievements',
+            id: 'certifications',
+            label: 'Certifications',
             icon: Trophy,
             color: 'text-yellow-400'
         },
@@ -134,8 +134,8 @@ const EnhancedAboutPage = () => {
                 {/* Main Content Area - Scrollable */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 flex-1 min-h-0">
                     {/* Dynamic Content - Scrollable */}
-                    <div className="lg:col-span-2 flex flex-col min-h-0">
-                        <div className="flex-1 overflow-y-auto custom-scrollbar pr-2">
+                    <div className="lg:col-span-2  flex flex-col min-h-0">
+                        <div className="flex-1 overflow-y-auto  custom-scrollbar pr-2">
                             {activeSection === 'intro' && (
                                 <div className="space-y-4 animate-fade-in">
                                     <div className="flex items-center gap-2 mb-4">
@@ -191,14 +191,14 @@ const EnhancedAboutPage = () => {
                             )}
 
                             {activeSection === 'hobbies' && (
-                                <div className="space-y-4 animate-fade-in">
+                                <div className="space-y-4 animate-fade-in ">
                                     <div className="flex items-center gap-2 mb-4">
                                         <Heart className="w-5 h-5 text-pink-400" />
                                         <h3 className="text-white text-lg font-semibold">Things I Love</h3>
                                     </div>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 ">
                                         {hobbies.map((hobby, index) => (
-                                            <div key={index} className="bg-zinc-800 p-3 rounded-lg hover:bg-gray-500 transition-all duration-300 hover:scale-105 group">
+                                            <div key={index} className="bg-zinc-800 p-3 rounded-lg  hover:bg-gray-500 transition-all duration-300  group">
                                                 <div className="flex items-center gap-3 mb-2">
                                                     <span className="text-lg group-hover:scale-110 transition-transform duration-300">{hobby.icon}</span>
                                                     <h3 className="text-white font-semibold text-sm">{hobby.name}</h3>
@@ -210,13 +210,13 @@ const EnhancedAboutPage = () => {
                                 </div>
                             )}
 
-                            {activeSection === 'achievements' && (
+                            {activeSection === 'certifications' && (
                                 <div className="space-y-3 animate-fade-in">
                                     <div className="flex items-center gap-2 mb-4">
                                         <Trophy className="w-5 h-5 text-yellow-400" />
-                                        <h3 className="text-white text-lg font-semibold">Achievements & Milestones</h3>
+                                        <h3 className="text-white text-lg font-semibold">Certifications & Milestones</h3>
                                     </div>
-                                    {achievements.map((achievement, index) => (
+                                    {certifications.map((achievement, index) => (
                                         <div key={index} className="flex items-center gap-3 p-3 bg-zinc-800 rounded-lg hover:bg-gray-500 transition-all duration-300 group">
                                             <Award className="w-4 h-4 text-yellow-400 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                                             <span className="text-white text-sm">{achievement}</span>

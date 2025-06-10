@@ -5,6 +5,7 @@ import {
     MessageCircle, Heart, Zap, Send, User, Mail, FileText, Calendar,
     MapPin, Phone, Github, Linkedin, Twitter, Instagram
 } from 'lucide-react';
+import { contactInfo, socialLinks } from '@/app/data';
 
 export default function ScrollableContactCard() {
     const [isVisible, setIsVisible] = useState(false);
@@ -20,59 +21,6 @@ export default function ScrollableContactCard() {
         setIsVisible(true);
     }, []);
 
-    const contactInfo = [
-        {
-            label: "Email",
-            value: "santiago@example.com",
-            icon: Mail,
-            color: "text-blue-400"
-        },
-        {
-            label: "Phone",
-            value: "+503 1234-5678",
-            icon: Phone,
-            color: "text-green-400"
-        },
-        {
-            label: "Location",
-            value: "San Salvador, SV",
-            icon: MapPin,
-            color: "text-red-400"
-        },
-        {
-            label: "Response Time",
-            value: "Within 24 hours",
-            icon: MessageCircle,
-            color: "text-purple-400"
-        }
-    ];
-
-    const socialLinks = [
-        {
-            name: "GitHub",
-            url: "https://github.com/santiago",
-            icon: Github,
-            description: "Code & Projects"
-        },
-        {
-            name: "LinkedIn",
-            url: "https://linkedin.com/in/santiago",
-            icon: Linkedin,
-            description: "Professional Network"
-        },
-        {
-            name: "Twitter",
-            url: "https://twitter.com/santiago",
-            icon: Twitter,
-            description: "Thoughts & Updates"
-        },
-        {
-            name: "Instagram",
-            url: "https://instagram.com/santiago",
-            icon: Instagram,
-            description: "Life & Photography"
-        }
-    ];
 
     const handleInputChange = (e: any) => {
         const { name, value } = e.target;
@@ -102,7 +50,7 @@ export default function ScrollableContactCard() {
 
                     {/* Left Column - Header & Contact Info (Scrollable) */}
                     <div className="flex flex-col min-h-0">
-                        <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 space-y-6">
+                        <div className="flex-1  overflow-x-visible overflow-y-auto custom-scrollbar pr-2 space-y-6">
                             {/* Header Section */}
                             <div className="space-y-4">
                                 <div className="flex items-center gap-2 text-gray-400">
@@ -133,7 +81,7 @@ export default function ScrollableContactCard() {
                                             key={info.label}
                                             className={`
                                                 bg-zinc-800/50 p-3 rounded-lg border border-zinc-700 hover:border-zinc-600
-                                                transition-all duration-500 ease-out transform hover:scale-105
+                                                transition-all duration-500 ease-out transform 
                                                 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}
                                             `}
                                             style={{ transitionDelay: `${index * 100}ms` }}
@@ -151,47 +99,34 @@ export default function ScrollableContactCard() {
                             </div>
 
                             {/* Social Media Links */}
-                            <div className="space-y-3">
-                                <h3 className="text-white font-semibold flex items-center gap-2 text-sm">
-                                    <Heart className="w-4 h-4 text-pink-400" />
-                                    Connect With Me
-                                </h3>
-
-                                <div className="grid grid-cols-2 gap-3">
-                                    {socialLinks.map((social, index) => (
-                                        <a
-                                            key={social.name}
-                                            href={social.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className={`
-                                                group bg-zinc-800/30 border border-zinc-700 rounded-lg p-3 
-                                                transition-all duration-300 transform hover:scale-105
-                                                hover:border-zinc-600
-                                                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-                                                ${social.name === 'GitHub' ? 'hover:text-gray-300 hover:bg-gray-800/50' : ''}
-                                                ${social.name === 'LinkedIn' ? 'hover:text-blue-400 hover:bg-blue-900/20' : ''}
-                                                ${social.name === 'Twitter' ? 'hover:text-sky-400 hover:bg-sky-900/20' : ''}
-                                                ${social.name === 'Instagram' ? 'hover:text-pink-400 hover:bg-pink-900/20' : ''}
-                                            `}
-                                            style={{ transitionDelay: `${(index + 4) * 100}ms` }}
-
-                                        >
-                                            <div className="flex items-center gap-2">
-                                                <social.icon className={`w-5 h-5 transition-all duration-300 ${hoveredSocial === social.name ? 'scale-110' : ''
-                                                    }`} />
-                                                <div>
-                                                    <h4 className="text-white font-medium text-xs group-hover:text-current">
-                                                        {social.name}
-                                                    </h4>
-                                                    <p className="text-gray-400 text-xs mt-0.5 group-hover:text-current/80">
-                                                        {social.description}
-                                                    </p>
-                                                </div>
+                            <div className="grid grid-cols-2 gap-3">
+                                {socialLinks.map((social, index) => (
+                                    <a
+                                        key={social.name}
+                                        href={social.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`
+                bg-zinc-800/50 p-3 rounded-lg border border-zinc-700 hover:border-zinc-600
+                transition-all duration-500 ease-out transform 
+                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+            `}
+                                        style={{ transitionDelay: `${(index) * 100}ms` }}
+                                    >
+                                        <div className="flex items-center gap-2">
+                                            <social.icon className={`w-5 h-5 transition-all duration-300 ${hoveredSocial === social.name ? 'scale-110' : ''
+                                                }`} />
+                                            <div>
+                                                <h4 className="text-white font-medium text-xs">
+                                                    {social.name}
+                                                </h4>
+                                                <p className="text-gray-400 text-xs mt-0.5">
+                                                    {social.description}
+                                                </p>
                                             </div>
-                                        </a>
-                                    ))}
-                                </div>
+                                        </div>
+                                    </a>
+                                ))}
                             </div>
 
                             {/* Fun Fact */}
@@ -229,7 +164,7 @@ export default function ScrollableContactCard() {
                                 </div>
                             </div>
 
-                            {/* Preferred Project Types */}
+                            {/* Preferred Project Types
                             <div className="space-y-3">
                                 <h3 className="text-white font-semibold text-sm">Preferred Project Types</h3>
                                 <div className="grid grid-cols-1 gap-2">
@@ -247,7 +182,7 @@ export default function ScrollableContactCard() {
                                         </div>
                                     ))}
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
@@ -333,7 +268,7 @@ export default function ScrollableContactCard() {
                                 <div className="mt-3 space-y-3 flex-shrink-0">
                                     <Button
                                         type="submit"
-                                        className="w-full bg-white text-zinc-900 hover:bg-zinc-200 font-medium py-2 text-sm transition-all duration-300 transform hover:scale-105"
+                                        className="w-full bg-white text-zinc-900 hover:bg-zinc-200 font-medium py-2 text-sm transition-all duration-300 transform "
                                     >
                                         <Send className="w-3 h-3 mr-1" />
                                         Send Message

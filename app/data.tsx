@@ -44,40 +44,38 @@ const stack = [
 const skills = [
     'UI/UX', 'Frontend Development', 'Figma', 'Canva',
     'Bilingual', 'Adaptability', 'Creative', 'Realiable',
-    'AI', 'SCRUM', 'CI/CD', 'Microsoft 365'
+    'AI', 'SCRUM', 'CI/CD', 'Microsoft 365', 'Agile'
 ]
 
 // Sample data - replace with your actual data
 const hobbies = [
     { name: "Coding", icon: "💻", description: "Building amazing web applications" },
     { name: "Gaming", icon: "🎮", description: "Strategy games and indie titles" },
-    { name: "Music", icon: "🎵", description: "Playing guitar and discovering new artists" },
-    { name: "Photography", icon: "📸", description: "Capturing moments and landscapes" },
-    { name: "Travel", icon: "✈️", description: "Exploring new cultures and places" },
-    { name: "Fitness", icon: "💪", description: "Staying active and healthy" }
+    { name: "Music", icon: "🎵", description: "Brent Faiyaz, Hozier, J.Cole & more" },
+    { name: "Volleyball", icon: "🏐", description: "Wing spiker for almost 10 years" },
+    { name: "Drawing", icon: "✏️", description: "Illustrating the world I picture" },
+    { name: "Read", icon: "📖", description: "Jhon Green never fails" }
 ];
 
-const achievements = [
-    "Completed 15+ web development projects",
-    "Graduated with honors in Computer Science",
-    "Built a full-stack e-commerce platform",
-    "Contributed to 5+ open source projects",
-    "Mentored 10+ junior developers",
-    "Spoke at 3 tech meetups"
+const certifications = [
+    "Grafana Observability Sales Professional",
+    "Relational to MongoDB",
+    "Oracle Next Education Program - Frontend",
+    "CCNAv7: Networks Introduction",
 ];
 
 const education = [
     {
         degree: "Bachelor of Computer Science",
-        institution: "Universidad Tecnológica",
-        year: "2020-2024",
+        institution: "Universidad Don Bosco",
+        year: "Currently Studying",
         description: "Focused on software engineering, algorithms, and web development."
     },
     {
-        degree: "Full Stack Development Bootcamp",
-        institution: "Tech Academy",
+        degree: "Technical Baccalaureate, Software Development",
+        institution: "Instituto Técnico Ricaldone",
         year: "2023",
-        description: "Intensive program covering React, Node.js, and modern development practices."
+        description: "Focused on fullstack desktop app development."
     }
 ];
 
@@ -210,7 +208,7 @@ const statusColors = {
 const contactInfo = [
     {
         label: "Email",
-        value: "santiago@example.com",
+        value: "santimerinoh12@gmail.com",
         icon: Mail,
         color: "text-blue-400"
     },
@@ -255,10 +253,10 @@ const socialLinks = [
     },
     {
         name: "Instagram",
-        url: "https://instagram.com/santiago",
+        url: "https://instagram.com/_santimh",
         icon: Instagram,
         description: "Life & Photography"
     }
 ];
 
-export { experiences, stack, skills, hobbies, education, achievements, categoryColors, statusColors, projects, goals2025, socialLinks, contactInfo };
+export { experiences, stack, skills, hobbies, education, certifications, categoryColors, statusColors, projects, goals2025, socialLinks, contactInfo };
