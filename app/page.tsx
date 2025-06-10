@@ -18,7 +18,7 @@ export default function Main() {
       <Toaster theme='dark' />
       <Navbar />
       <Home />
-      <Footer />
+      {/* <Footer /> */}
     </ section>
   );
 }

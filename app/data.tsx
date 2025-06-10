@@ -1,4 +1,10 @@
-import { Code, Volleyball, Music, Coffee } from "lucide-react";
+import {
+    Code, Volleyball, Music, Coffee, Palette,
+    Camera,
+    Gamepad2,
+    Plane,
+    Dumbbell, Rocket, Star, MapPin, Phone, Github, Linkedin, Twitter, Instagram, Mail, MessageCircle
+} from "lucide-react";
 
 
 const experiences = [
@@ -41,35 +47,73 @@ const skills = [
     'AI', 'SCRUM', 'CI/CD', 'Microsoft 365'
 ]
 
+// Sample data - replace with your actual data
 const hobbies = [
-    { icon: <Code className="w-5 h-5" />, name: "Coding", description: "Building side projects and exploring new technologies" },
-    { icon: <Volleyball className="w-5 h-5" />, name: "Volleyball", description: "Capturing moments and experimenting with visual storytelling" },
-    { icon: <Music className="w-5 h-5" />, name: "Music", description: "Listen to R&B, Indie, Pop and Rap music" },
-    { icon: <Coffee className="w-5 h-5" />, name: "Coffee", description: "Exploring different brewing methods and local coffee shops" }
+    { name: "Coding", icon: "💻", description: "Building amazing web applications" },
+    { name: "Gaming", icon: "🎮", description: "Strategy games and indie titles" },
+    { name: "Music", icon: "🎵", description: "Playing guitar and discovering new artists" },
+    { name: "Photography", icon: "📸", description: "Capturing moments and landscapes" },
+    { name: "Travel", icon: "✈️", description: "Exploring new cultures and places" },
+    { name: "Fitness", icon: "💪", description: "Staying active and healthy" }
+];
+
+const achievements = [
+    "Completed 15+ web development projects",
+    "Graduated with honors in Computer Science",
+    "Built a full-stack e-commerce platform",
+    "Contributed to 5+ open source projects",
+    "Mentored 10+ junior developers",
+    "Spoke at 3 tech meetups"
 ];
 
 const education = [
     {
-        degree: "Computer Science",
-        institution: "University Name",
+        degree: "Bachelor of Computer Science",
+        institution: "Universidad Tecnológica",
         year: "2020-2024",
-        description: "Focused on software engineering, algorithms, and web development"
+        description: "Focused on software engineering, algorithms, and web development."
     },
     {
         degree: "Full Stack Development Bootcamp",
-        institution: "Coding Academy",
+        institution: "Tech Academy",
         year: "2023",
-        description: "Intensive program covering modern web technologies"
+        description: "Intensive program covering React, Node.js, and modern development practices."
     }
 ];
 
-const achievements = [
-    "Built 10+ web applications",
-    "Contributed to open source projects",
-    "Hackathon winner (2023)",
-    "Mentored 5+ junior developers"
+// Extended data for the new "goals" tab
+const goals2025 = [
+    {
+        category: "Technical",
+        icon: Code,
+        items: [
+            "Master TypeScript advanced patterns",
+            "Build a full-stack AI application",
+            "Contribute to open source projects",
+            "Learn Rust programming language"
+        ]
+    },
+    {
+        category: "Career",
+        icon: Rocket,
+        items: [
+            "Land a senior developer role",
+            "Mentor junior developers",
+            "Speak at a tech conference",
+            "Build a profitable side project"
+        ]
+    },
+    {
+        category: "Personal",
+        icon: Star,
+        items: [
+            "Read 24 books this year",
+            "Travel to 3 new countries",
+            "Learn a new musical instrument",
+            "Complete a marathon"
+        ]
+    }
 ];
-
 
 // Sample projects data
 const projects = [
@@ -162,4 +206,59 @@ const statusColors = {
     "Completed": "bg-gray-500/20 text-gray-300"
 };
 
-export { experiences, stack, skills, hobbies, education, achievements, categoryColors, statusColors, projects };
+
+const contactInfo = [
+    {
+        label: "Email",
+        value: "santiago@example.com",
+        icon: Mail,
+        color: "text-blue-400"
+    },
+    {
+        label: "Phone",
+        value: "+503 1234-5678",
+        icon: Phone,
+        color: "text-green-400"
+    },
+    {
+        label: "Location",
+        value: "San Salvador, SV",
+        icon: MapPin,
+        color: "text-red-400"
+    },
+    {
+        label: "Response Time",
+        value: "Within 24 hours",
+        icon: MessageCircle,
+        color: "text-purple-400"
+    }
+];
+
+const socialLinks = [
+    {
+        name: "GitHub",
+        url: "https://github.com/santiago",
+        icon: Github,
+        description: "Code & Projects"
+    },
+    {
+        name: "LinkedIn",
+        url: "https://linkedin.com/in/santiago",
+        icon: Linkedin,
+        description: "Professional Network"
+    },
+    {
+        name: "Twitter",
+        url: "https://twitter.com/santiago",
+        icon: Twitter,
+        description: "Thoughts & Updates"
+    },
+    {
+        name: "Instagram",
+        url: "https://instagram.com/santiago",
+        icon: Instagram,
+        description: "Life & Photography"
+    }
+];
+
+export { experiences, stack, skills, hobbies, education, achievements, categoryColors, statusColors, projects, goals2025, socialLinks, contactInfo };

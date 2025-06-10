@@ -15,7 +15,7 @@ export default function Project() {
             <Toaster theme='dark' />
             <Navbar />
             <Projects />
-            <Footer />
+            {/* <Footer /> */}
         </ section>
     );
 }

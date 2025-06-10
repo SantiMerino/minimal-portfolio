@@ -20,18 +20,8 @@ export const metadata: Metadata = {
   keywords: ['Web Designer', 'Developer', 'UX', 'UI', 'El Salvador', 'San Salvador'],
   authors: [{ name: 'Santiago Merino' }],
   creator: 'Santiago Merino',
-  openGraph: {
-    title: 'Santiago Merino - Fullstack Developer',
-    description: 'Fullstack developer in El Salvador',
-    type: 'website',
-    locale: 'en_US',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Santiago Merino - Student & Fullstack Developer',
-    description: 'Fullstack developer & Computer Science Student in El Salvador',
-  },
-  viewport: 'width=device-width, initial-scale=1',
+  // Enhanced viewport settings for 100% zoom
+  viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
   robots: 'index, follow',
 };
 
