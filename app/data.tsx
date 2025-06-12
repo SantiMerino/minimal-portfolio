@@ -117,27 +117,27 @@ const goals2025 = [
 const projects = [
     {
         name: "E-Commerce Platform",
-        description: "Full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard. Features include user authentication, shopping cart, order tracking, and responsive design.",
-        stack: ["React", "TypeScript", "Node.js", "PostgreSQL", "Stripe"],
-        category: "Full Stack",
-        status: "Production",
-        year: "2024",
-        highlights: ["Real-time updates", "Payment integration", "Admin dashboard"],
-        githubUrl: "https://github.com/username/ecommerce",
-        liveUrl: "https://ecommerce-demo.com",
+        description: "Front-end e-commerce solution with API data fetching using https://fakestoreapi.com/products. Showing the last viewed & favorite products.",
+        stack: ["React", "TypeScript", "Tailwind", "ReactRotuerDOM"],
+        category: "Frontend",
+        status: "Beta",
+        year: "2025",
+        highlights: ["Real-time updates", "Local Storage", "Routing"],
+        githubUrl: "https://github.com/SantiMerino/prueba-tecnica",
+        liveUrl: "https://e-commerce-frontend-dusky-seven.vercel.app/",
         featured: true
     },
     {
-        name: "Task Management App",
-        description: "Collaborative task management application with drag-and-drop functionality, team collaboration features, and real-time synchronization across devices.",
-        stack: ["Next.js", "Tailwind CSS", "Supabase", "Framer Motion"],
-        category: "Web App",
+        name: "SMS Tracker",
+        description: "Front-end tracker solution to manage KPI's for call center agents.",
+        stack: ["React.js", "Tailwind CSS", "Vite", "Babel & SWC"],
+        category: "Frontend",
         status: "Active",
         year: "2024",
-        highlights: ["Drag & drop", "Real-time sync", "Team collaboration"],
+        highlights: ["KPI tracker", "Real-time update", "Success Rates"],
         githubUrl: "https://github.com/username/taskapp",
-        liveUrl: "https://taskapp-demo.com",
-        featured: true
+        liveUrl: "https://smstracker.vercel.app/",
+        featured: false
     },
     {
         name: "Weather Analytics Dashboard",
@@ -194,7 +194,7 @@ const categoryColors = {
     "Web App": "bg-green-500/20 text-green-300 border-green-500/30",
     "Data Visualization": "bg-purple-500/20 text-purple-300 border-purple-500/30",
     "AI/ML": "bg-orange-500/20 text-orange-300 border-orange-500/30",
-    "Data Engineering": "bg-red-500/20 text-red-300 border-red-500/30"
+    "Frontend": "bg-red-500/20 text-red-300 border-red-500/30"
 };
 
 const statusColors = {

@@ -24,7 +24,12 @@ export default function Home() {
     return (
         <div className="min-h-screen bg-black flex items-center justify-center p-4" id='home'>
             <Card className={`
-                w-[calc(100vw-2rem)] h-full sm:w-[calc(100vw-4rem)] sm:h-[calc(100vh-4rem)] lg:w-[calc(100vw-6rem)] lg:h-[calc(100vh-6rem)] max-w-7xl bg-zinc-900 text-white p-8 sm:p-12 lg:p-8 border-none m-2
+                w-full lg::w-[calc(100vw-2rem)] xl:w-[calc(100vw-6rem)] 
+                h-auto lg:h-[calc(100vh-2rem)] xl:h-[calc(100vh-6rem)] 
+                max-w-7xl bg-zinc-900 text-white 
+                p-4 sm:p-8 lg:p-8 
+                border-none 
+                sm:m-1 lg:m-2
                 transition-all duration-1000 ease-out transform
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
             `}>
