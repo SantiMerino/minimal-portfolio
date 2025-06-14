@@ -136,10 +136,10 @@ const EnhancedAboutPage = () => {
                 </div>
 
                 {/* Main Content Area - Scrollable */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 flex-1 min-h-0">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 flex-1 min-h-0 h-[calc(100%-12rem)]">
                     {/* Dynamic Content - Scrollable */}
-                    <div className="lg:col-span-2  flex flex-col min-h-0">
-                        <div className="flex-1 overflow-y-auto  custom-scrollbar pr-2">
+                    <div className="lg:col-span-2 flex flex-col min-h-0 h-full">
+                        <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 h-full">
                             {activeSection === 'intro' && (
                                 <div className="space-y-4 animate-fade-in">
                                     <div className="flex items-center gap-2 mb-4">
@@ -147,7 +147,7 @@ const EnhancedAboutPage = () => {
                                         <h3 className="text-white text-lg font-semibold">Introduction</h3>
                                     </div>
                                     <p className="text-white text-sm sm:text-base leading-relaxed">
-                                        Passionate about creative problem-solving and building scalable web applications across a variety of technologies and programming languages. I'm especially interested in how AI and cloud infrastructure can power smarter, more resilient applications.
+                                        Passionate about creative problem-solving and building scalable web applications across a variety of technologies and programming languages. I&apos;m especially interested in how AI and cloud infrastructure can power smarter, more resilient applications.
                                     </p>
                                     <p className="text-gray-400 text-sm leading-relaxed">
                                         Currently focused on full-stack development with React, Node.js, and cloud technologies. Always eager to learn and collaborate on innovative projects.
@@ -262,7 +262,7 @@ const EnhancedAboutPage = () => {
                                             <span className="text-white font-medium">Motivation</span>
                                         </div>
                                         <p className="text-gray-300 text-sm">
-                                            "The best time to plant a tree was 20 years ago. The second best time is now."
+                                            &quot;The best time to plant a tree was 20 years ago. The second best time is now.&quot;
                                         </p>
                                     </div>
                                 </div>

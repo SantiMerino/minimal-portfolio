@@ -53,7 +53,7 @@ export default function Home() {
                                         </h1>
 
                                         <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-                                            I'm a Computer Science Student & Fullstack Developer
+                                            I&apos;m a Computer Science Student & Fullstack Developer
                                         </h2>
                                     </div>
 
@@ -75,9 +75,11 @@ export default function Home() {
                                                 Contact me
                                             </Button>
                                         </Link>
-                                        <Button variant={'default'} className='bg-white hover:bg-zinc-300 text-zinc-900'>
-                                            Check my work
-                                        </Button>
+                                        <Link href={"/projects"}>
+                                            <Button variant={'default'} className='bg-white hover:bg-zinc-300 text-zinc-900'>
+                                                Check my work
+                                            </Button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

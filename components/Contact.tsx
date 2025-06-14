@@ -62,12 +62,12 @@ export default function ScrollableContactCard() {
                             </div>
 
                             <h1 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
-                                Let's Work Together
+                                Let&apos;s Work Together
                             </h1>
 
                             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
                                 Have a project in mind? Want to collaborate? Or just want to say hi?
-                                I'd love to hear from you. Let's create something amazing together.
+                                I&apos;d love to hear from you. Let&apos;s create something amazing together.
                             </p>
                         </div>
 
@@ -149,7 +149,7 @@ export default function ScrollableContactCard() {
                                             <span className="text-white font-medium text-sm sm:text-base">Fun Fact</span>
                                         </div>
                                         <p className="text-gray-300 text-xs sm:text-sm">
-                                            I reply to emails faster than I can solve a Rubik's cube (which is about 2 minutes) 🎲
+                                            I reply to emails faster than I can solve a Rubik&apos;s cube (which is about 2 minutes) 🎲
                                         </p>
                                     </div>
 

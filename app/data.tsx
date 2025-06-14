@@ -3,7 +3,7 @@ import {
     Camera,
     Gamepad2,
     Plane,
-    Dumbbell, Rocket, Star, MapPin, Phone, Github, Linkedin, Twitter, Instagram, Mail, MessageCircle
+    Dumbbell, Rocket, Star, MapPin, Phone, Github, Linkedin, Twitter, Instagram, Mail, MessageCircle,
 } from "lucide-react";
 
 
@@ -62,6 +62,8 @@ const certifications = [
     "Relational to MongoDB",
     "Oracle Next Education Program - Frontend",
     "CCNAv7: Networks Introduction",
+    "AWS Foundation of Prompt Engineering",
+    "AWS Generative AI for Executives",
 ];
 
 const education = [
@@ -97,7 +99,7 @@ const goals2025 = [
         items: [
             "Land a senior developer role",
             "Mentor junior developers",
-            "Speak at a tech conference",
+            "Work in a startup",
             "Build a profitable side project"
         ]
     },
@@ -105,9 +107,9 @@ const goals2025 = [
         category: "Personal",
         icon: Star,
         items: [
-            "Read 24 books this year",
-            "Travel to 3 new countries",
-            "Learn a new musical instrument",
+            "Read 12 books this year",
+            "Learn a new skill",
+            "Learn French or Japanese",
             "Complete a marathon"
         ]
     }
@@ -116,7 +118,7 @@ const goals2025 = [
 // Sample projects data
 const projects = [
     {
-        name: "E-Commerce Platform",
+        name: "E-Commerce",
         description: "Front-end e-commerce solution with API data fetching using https://fakestoreapi.com/products. Showing the last viewed & favorite products.",
         stack: ["React", "TypeScript", "Tailwind", "ReactRotuerDOM"],
         category: "Frontend",
@@ -132,7 +134,7 @@ const projects = [
         description: "Front-end tracker solution to manage KPI's for call center agents.",
         stack: ["React.js", "Tailwind CSS", "Vite", "Babel & SWC"],
         category: "Frontend",
-        status: "Active",
+        status: "Completed",
         year: "2024",
         highlights: ["KPI tracker", "Real-time update", "Success Rates"],
         githubUrl: "https://github.com/username/taskapp",
@@ -140,46 +142,46 @@ const projects = [
         featured: false
     },
     {
-        name: "Weather Analytics Dashboard",
-        description: "Interactive weather analytics platform with data visualization, historical trends, and predictive insights using machine learning algorithms.",
-        stack: ["React", "D3.js", "Python", "Flask", "Chart.js"],
-        category: "Data Visualization",
+        name: "Old Portfolio",
+        description: "First portfolio made with React, TailwindCSS and Vite, it was a simple portfolio to show my skills and projects. Used to get a scholarship to study in the Spain.",
+        stack: ["React", "TailwindCSS", "Vite"],
+        category: "Frontend",
         status: "Completed",
         year: "2023",
-        highlights: ["ML predictions", "Interactive charts", "Historical data"],
-        githubUrl: "https://github.com/username/weather-dashboard",
-        liveUrl: "https://weather-analytics.com",
+        highlights: ["Langing Page", "Animations", "Responsive Design"],
+        githubUrl: "https://github.com/SantiMerino/portfolio",
+        liveUrl: "https://portfolio-santimerinos-projects.vercel.app",
         featured: false
     },
     {
-        name: "AI Chat Assistant",
-        description: "Intelligent chat assistant with natural language processing, context awareness, and integration with multiple APIs for enhanced functionality.",
-        stack: ["Vue.js", "Node.js", "OpenAI API", "Socket.io", "MongoDB"],
-        category: "AI/ML",
+        name: "Backpack Service",
+        description: "Web app to manage invoices, client relationships, ticketing and backpacks for services, for a company called Stratega-IT. Alerting system for the company's employees and dashboard for analytics.",
+        stack: ["React.js", "Node.js", "Prisma", "Node.js", "PostgreSQL", "Express"],
+        category: "Web App",
         status: "Beta",
         year: "2024",
-        highlights: ["NLP integration", "Context awareness", "Real-time chat"],
-        githubUrl: "https://github.com/username/ai-chat",
+        highlights: ["Invoice", "Dashboard", "Ticketing"],
+        githubUrl: "https://github.com/SantiMerino/Stratega-IT",
         liveUrl: null,
         featured: true
     },
     {
-        name: "Portfolio Website",
-        description: "Modern portfolio website with smooth animations, responsive design, and optimized performance. Built with cutting-edge web technologies.",
-        stack: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
-        category: "Web App",
-        status: "Production",
+        name: "Gnosis",
+        description: "Desktop app that manages academic institutions, students, teachers, courses, and more. Students have a personal repository to upload their documents and projects built-in text-editor and tasks uploader. Built with just Java in Netbeans Apache IDE.",
+        stack: ["Java", "SQL Server"],
+        category: "Desktop",
+        status: "Beta",
         year: "2024",
-        highlights: ["Smooth animations", "SEO optimized", "Fast loading"],
+        highlights: ["MVC", "Creative Design", "Wholistic System"],
         githubUrl: "https://github.com/username/portfolio",
         liveUrl: "https://portfolio-demo.com",
         featured: false
     },
     {
-        name: "Data Pipeline Tool",
+        name: "Workflows & Pipelines",
         description: "Automated data pipeline for processing and analyzing large datasets with real-time monitoring and error handling capabilities.",
         stack: ["Python", "Apache Airflow", "Docker", "PostgreSQL", "Redis"],
-        category: "Data Engineering",
+        category: "DevOps",
         status: "Active",
         year: "2023",
         highlights: ["Automated processing", "Real-time monitoring", "Error handling"],
@@ -190,11 +192,12 @@ const projects = [
 ];
 
 const categoryColors = {
-    "Full Stack": "bg-blue-500/20 text-blue-300 border-blue-500/30",
-    "Web App": "bg-green-500/20 text-green-300 border-green-500/30",
-    "Data Visualization": "bg-purple-500/20 text-purple-300 border-purple-500/30",
+    "Web App": "bg-blue-500/20 text-blue-300 border-blue-500/30",
+    "Backend": "bg-green-500/20 text-green-300 border-green-500/30",
+    "Frontend": "bg-red-500/20 text-red-300 border-red-500/30",
+    "DevOps": "bg-purple-500/20 text-purple-300 border-purple-500/30",
     "AI/ML": "bg-orange-500/20 text-orange-300 border-orange-500/30",
-    "Frontend": "bg-red-500/20 text-red-300 border-red-500/30"
+    "Desktop": "bg-gray-500/20 text-gray-300 border-gray-500/30",
 };
 
 const statusColors = {
@@ -214,7 +217,7 @@ const contactInfo = [
     },
     {
         label: "Phone",
-        value: "+503 1234-5678",
+        value: "+503 6015-0286",
         icon: Phone,
         color: "text-green-400"
     },
@@ -235,13 +238,13 @@ const contactInfo = [
 const socialLinks = [
     {
         name: "GitHub",
-        url: "https://github.com/santiago",
+        url: "https://github.com/SantiMerino",
         icon: Github,
         description: "Code & Projects"
     },
     {
         name: "LinkedIn",
-        url: "https://linkedin.com/in/santiago",
+        url: "https://linkedin.com/in/santiagomerinoh",
         icon: Linkedin,
         description: "Professional Network"
     },

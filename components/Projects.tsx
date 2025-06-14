@@ -27,8 +27,8 @@ export default function Projects() {
     const filteredProjects = filter === "All" ? projects : projects.filter(p => p.category === filter);
 
     // For carousel, we'll show all projects in cards
-    const carouselProjects = projects;
-    const maxVisibleCards = 2;
+    const carouselProjects = projects.filter(p => p.featured === true);
+    const maxVisibleCards = 1;
 
     const nextSlide = () => {
         setCurrentSlide((prev) =>
@@ -69,7 +69,7 @@ export default function Projects() {
                             </div>
 
                             <h1 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
-                                Things I've Built
+                                Things I&apos;ve Built
                             </h1>
 
                             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
