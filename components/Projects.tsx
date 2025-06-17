@@ -190,14 +190,13 @@ export default function Projects() {
                                                             className="bg-white text-zinc-900 hover:bg-zinc-200 h-6 sm:h-7 text-xs px-2"
                                                             asChild
                                                         >
-                                                            <a href={carouselProjects[currentSlide].liveUrl} target="_blank" rel="noopener noreferrer">
-                                                                {carouselProjects[currentSlide].liveUrl && (
-                                                                    <a href={carouselProjects[currentSlide].liveUrl} target="_blank" rel="noopener noreferrer">
-                                                                        <ExternalLink className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-1" />
-                                                                        Demo
-                                                                    </a>
-                                                                )}
-                                                            </a>
+                                                            {carouselProjects[currentSlide].liveUrl && (
+                                                                <a href={carouselProjects[currentSlide].liveUrl} target="_blank" rel="noopener noreferrer">
+                                                                    <ExternalLink className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-1" />
+                                                                    Demo
+                                                                </a>
+                                                            )}
+
                                                         </Button>
                                                     )}
                                                 </div>
