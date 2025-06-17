@@ -47,7 +47,6 @@ const skills = [
     'AI', 'SCRUM', 'CI/CD', 'Microsoft 365', 'Agile'
 ]
 
-// Sample data - replace with your actual data
 const hobbies = [
     { name: "Coding", icon: "💻", description: "Building amazing web applications" },
     { name: "Gaming", icon: "🎮", description: "Strategy games and indie titles" },

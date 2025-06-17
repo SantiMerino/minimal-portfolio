@@ -191,8 +191,12 @@ export default function Projects() {
                                                             asChild
                                                         >
                                                             <a href={carouselProjects[currentSlide].liveUrl} target="_blank" rel="noopener noreferrer">
-                                                                <ExternalLink className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-1" />
-                                                                Demo
+                                                                {carouselProjects[currentSlide].liveUrl && (
+                                                                    <a href={carouselProjects[currentSlide].liveUrl} target="_blank" rel="noopener noreferrer">
+                                                                        <ExternalLink className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-1" />
+                                                                        Demo
+                                                                    </a>
+                                                                )}
                                                             </a>
                                                         </Button>
                                                     )}
