@@ -179,11 +179,11 @@ const projects = [
     {
         name: "Workflows & Pipelines",
         description: "Automated data pipeline for processing and analyzing large datasets with real-time monitoring and error handling capabilities.",
-        stack: ["Python", "Apache Airflow", "Docker", "PostgreSQL", "Redis"],
+        stack: ["Github Actions", "YAML", "CI/CD"],
         category: "DevOps",
         status: "Active",
         year: "2023",
-        highlights: ["Automated processing", "Real-time monitoring", "Error handling"],
+        highlights: ["Automated processing", "Data analysis", "Error handling"],
         githubUrl: "https://github.com/username/data-pipeline",
         liveUrl: null,
         featured: false
