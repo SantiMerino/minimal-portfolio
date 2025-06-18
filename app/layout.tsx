@@ -23,6 +23,11 @@ export const metadata: Metadata = {
   // Enhanced viewport settings for 100% zoom
   viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
   robots: 'index, follow',
+  icons: {
+    icon: '/favicon.ico',         // generic favicon
+    shortcut: '/favicon.ico',     // shortcut icon (for legacy browsers)
+    apple: '/favicon.png',        // optional: if you want Apple devices support
+  }
 };
 
 export default function RootLayout({
