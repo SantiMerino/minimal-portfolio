@@ -6,10 +6,18 @@ import {
     MapPin, Phone, Github, Linkedin, Twitter, Instagram
 } from 'lucide-react';
 import { contactInfo, socialLinks } from '@/app/data';
+import emailjs from '@emailjs/browser';
+import { toast } from 'sonner';
+
+
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 export default function ScrollableContactCard() {
     const [isVisible, setIsVisible] = useState(false);
     const [hoveredSocial, setHoveredSocial] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -19,6 +27,7 @@ export default function ScrollableContactCard() {
 
     useEffect(() => {
         setIsVisible(true);
+        emailjs.init(EMAILJS_PUBLIC_KEY as string);
     }, []);
 
     const handleInputChange = (e: any) => {
@@ -29,13 +38,38 @@ export default function ScrollableContactCard() {
         }));
     };
 
-    const handleSubmit = (e: any) => {
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        // Handle form submission here
-        alert('Message sent! (This is a demo)');
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        setIsLoading(true);
+
+        try {
+            // Send email using EmailJS
+            const result = await emailjs.send(
+                EMAILJS_SERVICE_ID as string,
+                EMAILJS_TEMPLATE_ID as string,
+                {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    subject: formData.subject || 'New contact form message',
+                    message: formData.message,
+                    to_name: 'Santiago', // Your name
+                },
+                EMAILJS_PUBLIC_KEY as string
+            );
+
+            console.log('Email sent successfully:', result);
+            toast.success('Message sent successfully! I\'ll get back to you soon.');
+            // Reset form
+            setFormData({ name: '', email: '', subject: '', message: '' });
+
+        } catch (error) {
+            console.error('Error sending email:', error);
+            alert('Oops! Something went wrong. Please try again or email me directly.');
+        } finally {
+            setIsLoading(false);
+        }
     };
+
 
     return (
         <div className="min-h-screen bg-black flex items-center justify-center p-2 sm:p-4 custom-scrollbar" id='contact'>
@@ -204,7 +238,8 @@ export default function ScrollableContactCard() {
                                                 value={formData.name}
                                                 onChange={handleInputChange}
                                                 required
-                                                className="w-full bg-zinc-700/50 border border-zinc-600 rounded-lg px-3 py-2 text-white text-xs sm:text-sm placeholder-gray-400 focus:outline-none focus:border-white focus:bg-zinc-700 transition-all duration-300"
+                                                disabled={isLoading}
+                                                className="w-full bg-zinc-700/50 border border-zinc-600 rounded-lg px-3 py-2 text-white text-xs sm:text-sm placeholder-gray-400 focus:outline-none focus:border-white focus:bg-zinc-700 transition-all duration-300 disabled:opacity-50"
                                                 placeholder="Your name"
                                             />
                                         </div>
@@ -220,7 +255,8 @@ export default function ScrollableContactCard() {
                                                 value={formData.email}
                                                 onChange={handleInputChange}
                                                 required
-                                                className="w-full bg-zinc-700/50 border border-zinc-600 rounded-lg px-3 py-2 text-white text-xs sm:text-sm placeholder-gray-400 focus:outline-none focus:border-white focus:bg-zinc-700 transition-all duration-300"
+                                                disabled={isLoading}
+                                                className="w-full bg-zinc-700/50 border border-zinc-600 rounded-lg px-3 py-2 text-white text-xs sm:text-sm placeholder-gray-400 focus:outline-none focus:border-white focus:bg-zinc-700 transition-all duration-300 disabled:opacity-50"
                                                 placeholder="your@email.com"
                                             />
                                         </div>
@@ -237,7 +273,8 @@ export default function ScrollableContactCard() {
                                             name="subject"
                                             value={formData.subject}
                                             onChange={handleInputChange}
-                                            className="w-full bg-zinc-700/50 border border-zinc-600 rounded-lg px-3 py-2 text-white text-xs sm:text-sm placeholder-gray-400 focus:outline-none focus:border-white focus:bg-zinc-700 transition-all duration-300"
+                                            disabled={isLoading}
+                                            className="w-full bg-zinc-700/50 border border-zinc-600 rounded-lg px-3 py-2 text-white text-xs sm:text-sm placeholder-gray-400 focus:outline-none focus:border-white focus:bg-zinc-700 transition-all duration-300 disabled:opacity-50"
                                             placeholder="What's this about?"
                                         />
                                     </div>
@@ -253,7 +290,8 @@ export default function ScrollableContactCard() {
                                             value={formData.message}
                                             onChange={handleInputChange}
                                             required
-                                            className="w-full flex-1 min-h-[80px] bg-zinc-700/50 border border-zinc-600 rounded-lg px-3 py-2 text-white text-xs sm:text-sm placeholder-gray-400 focus:outline-none focus:border-white focus:bg-zinc-700 transition-all duration-300 resize-none"
+                                            disabled={isLoading}
+                                            className="w-full flex-1 min-h-[80px] bg-zinc-700/50 border border-zinc-600 rounded-lg px-3 py-2 text-white text-xs sm:text-sm placeholder-gray-400 focus:outline-none focus:border-white focus:bg-zinc-700 transition-all duration-300 resize-none disabled:opacity-50"
                                             placeholder="Tell me about your project..."
                                         />
                                     </div>
@@ -263,22 +301,21 @@ export default function ScrollableContactCard() {
                                 <div className="mt-3 sm:mt-4 space-y-3 sm:space-y-4 flex-shrink-0">
                                     <Button
                                         type="submit"
-                                        className="w-full bg-white text-zinc-900 hover:bg-zinc-200 font-medium py-2 sm:py-3 text-xs sm:text-sm transition-all duration-300 transform hover:scale-[1.02]"
+                                        disabled={isLoading}
+                                        className="w-full bg-white text-zinc-900 hover:bg-zinc-200 font-medium py-2 sm:py-3 text-xs sm:text-sm transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                                     >
-                                        <Send className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                                        Send Message
+                                        {isLoading ? (
+                                            <>
+                                                <div className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 animate-spin rounded-full border-2 border-zinc-900 border-t-transparent"></div>
+                                                Sending...
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Send className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                                                Send Message
+                                            </>
+                                        )}
                                     </Button>
-
-                                    {/* Alternative Contact Note */}
-                                    <div className="p-2 sm:p-3 bg-zinc-700/30 rounded-lg border border-zinc-600">
-                                        <p className="text-gray-400 text-xs sm:text-sm text-center">
-                                            <Calendar className="w-3 h-3 sm:w-4 sm:h-4 inline mr-1" />
-                                            Prefer a call?
-                                            <a href="mailto:santiago@example.com?subject=Schedule a Call" className="text-blue-400 hover:text-blue-300 ml-1 underline">
-                                                Schedule here
-                                            </a>
-                                        </p>
-                                    </div>
                                 </div>
                             </form>
                         </div>
